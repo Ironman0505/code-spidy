@@ -18,6 +18,21 @@ int frog(int i){
  		cost=min(cost,frog(i-2)+ abs(h[i]-h[i-2]));
  	return dp[i]=cost;
  }
+// for k possible jumps , simply run a loop for k times... (instead of 2 jumps,k there )
+// and if(i-j)>=k is the condition...
+ // int frog(int i){
+ // if(i==0) return 0;
+ // if(dp[i]!=-1) return dp[i];
+ //  else{
+ //	int cost=INT_MAX;
+//  for(int j=1;j<=k;j++){
+ //  if((i-j)>=0)
+ //  cost=min(cost,frog(i-j)+abs(h[i]-h[i-j]));
+//    }
+//     return dp[i]=cost;
+  //  }
+
+
 
 }
 
