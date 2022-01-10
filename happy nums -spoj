@@ -1,0 +1,36 @@
+ #include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+ll cnt[1000007];
+//qsn padooo....btw hii alien ji
+// main theme is ...if the terms keep repeating, then return -1..
+//so , to check repetition... use map or cnt array..better go with cnt array
+ll dig(ll a){
+ll ret=0;
+while(a>0){
+  ll rem=a%10;
+  ret+=(rem*rem);
+  a/=10;
+}
+return ret;
+}
+
+int main() { 
+ll n,c=0;
+cin>>n;
+while(n!=1){
+ll ans=dig(n);
+if(cnt[ans]==0){
+  n=ans;
+  cnt[ans]++;
+  c++;
+}
+else{
+  cout<<-1<<endl;
+  return 0;
+}
+}
+cout<<c<<endl;
+ return 0;
+
+}
