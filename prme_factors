@@ -1,0 +1,37 @@
+// didn't expect that , this gives tle :(
+
+
+the viper's code
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long 
+
+int main(){
+	int t;
+	// cin>>t;
+	while(1){
+	map<ll,ll>prm;
+ll n,num;
+cin>>n;
+if(n==0)
+break;
+
+num=n;
+for(ll i=2;i*i<=n;i++){
+while(n%i==0){
+prm[i]++;
+n=n/i;
+}
+}
+if(n>1){
+prm[n]++;
+}
+for(auto x:prm){
+	cout<<x.first<<'^'<<x.second<<" ";
+}
+cout<<endl;
+}
+return 0;
+}
