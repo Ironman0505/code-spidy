@@ -1,0 +1,32 @@
+// product of large numberssssssssss
+// used 2 strings and performed elementary basic muliplication
+
+    #include <bits/stdc++.h>
+    using namespace std;
+    #define ll long
+   // const  int m=1e9+7
+// int prdt[m];
+
+    int main(){
+    string s1,s2;
+    cin>>s1>>s2;
+int m=s1.size(),n=s2.size();
+int prdt[m+n]={0};
+for(ll i=m-1;i>=0;i--)   {
+	for(ll j=n-1;j>=0;j--){
+      ll pd=(s1[i]-'0')*(s2[j]-'0');
+      ll tot=prdt[i+j+1]+pd;
+      prdt[i+j+1]=tot%10;
+      prdt[i+j]+=tot/10;
+	}
+}
+ll k=0;
+while(prdt[k]==0){
+k++;
+}
+for(ll i=k;i<m+n;i++)
+cout<<prdt[i];
+
+    return 0;
+    }
+
